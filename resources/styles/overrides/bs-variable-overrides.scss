@@ -1,0 +1,446 @@
+/** Import Bootstrap functions */
+@import '~bootstrap/scss/functions';
+
+/** Import Swiper Slider **/
+// @import '~swiper/css/bundle';
+
+/** Bootstrap navbar fix (https://git.io/fADqW) */
+$navbar-dark-toggler-icon-bg: none;
+$navbar-light-toggler-icon-bg: none;
+
+// Typography
+//
+$font-family-sans-serif: 'Inter', sans-serif;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+  'Liberation Mono', 'Courier New', monospace;
+$font-family-headings: $font-family-sans-serif;
+$font-family-base: $font-family-sans-serif;
+// stylelint-enable value-keyword-case
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-size-lg: $font-size-base * 1.25;
+$font-size-sm: $font-size-base * 0.875;
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder;
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.625;
+$h1-font-size: $font-size-base * 4.5; // 72px
+$h2-font-size: $font-size-base * 3.75; // 60px
+$h3-font-size: $font-size-base * 3; // 48px
+$h4-font-size: $font-size-base * 2.25; // 36px
+$h5-font-size: $font-size-base * 1.875; // 30px
+$h6-font-size: $font-size-base * 1.5; // 24px
+$heading-1: $h1-font-size * 1.2; // 96px
+$line-height-sm: 1.1;
+$line-height-md: 1.3;
+$line-height-lg: 1.5;
+$headings-font-family: $font-family-headings;
+$headings-font-weight: $font-weight-semibold;
+$headings-line-height: $line-height-lg;
+
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+// Color system
+$white: #fff;
+$black: #000;
+
+/* START PRIMARY COLORS ------------------------------------------- */
+//  Brand Colours
+//  Gray Colours
+$gray-25: #fcfcfd;
+$gray-50: #f9fafb;
+$gray-100: #f2f4f7;
+$gray-200: #eaecf0;
+$gray-300: #d0d5dd;
+$gray-400: #98a2b3;
+$gray-500: #667085;
+$gray-600: #475467;
+$gray-700: #344054;
+$gray-800: #1d2939;
+$gray-900: #101828;
+$gray-950: #0c111d;
+
+// Brand Primary Colors
+$brand-25: #fcfaff;
+$brand-50: #f9f5ff;
+$brand-100: #f4ebff;
+$brand-200: #e9d7fe;
+$brand-300: #d6bbfb;
+$brand-400: #b692f6;
+$brand-500: #9e77ed;
+$brand-600: #7f56d9;
+$brand-700: #6941c6;
+$brand-800: #53389e;
+$brand-900: #42307d;
+$brand-950: #2c1c5f;
+
+// Red
+$red-25: #fffbfa;
+$red-50: #fef3f2;
+$red-100: #fee4e2;
+$red-200: #fecdca;
+$red-300: #fda29b;
+$red-400: #f97066;
+$red-500: #f04438;
+$red-600: #d92d20;
+$red-700: #b42318;
+$red-800: #912018;
+$red-900: #7a271a;
+$red-950: #55160c;
+
+// Error
+$error-25: $red-25;
+$error-50: $red-50;
+$error-100: $red-100;
+$error-200: $red-200;
+$error-300: $red-300;
+$error-400: $red-400;
+$error-500: $red-500;
+$error-600: $red-600;
+$error-700: $red-700;
+$error-800: $red-800;
+$error-900: $red-900;
+$error-950: $red-950;
+
+// Warning
+$warning-25: #fffcf5;
+$warning-50: #fffaeb;
+$warning-100: #fef0c7;
+$warning-200: #fedf89;
+$warning-300: #fec84b;
+$warning-400: #fdb022;
+$warning-500: #f79009;
+$warning-600: #dc6803;
+$warning-700: #b54708;
+$warning-800: #93370d;
+$warning-900: #7a2e0e;
+$warning-950: #4e1d09;
+
+// Success
+$success-25: #f6fef9;
+$success-50: #ecfdf3;
+$success-100: #dcfae6;
+$success-200: #a9efc5;
+$success-300: #75e0a7;
+$success-400: #47cd89;
+$success-500: #17b26a;
+$success-600: #079455;
+$success-700: #067647;
+$success-800: #085d3a;
+$success-900: #074d31;
+$success-950: #053321;
+/* END PRIMARY COLORS --------------------------------------------- */
+
+/* START SECONDARY COLORS ----------------------------------------- */
+// Gray Blue
+$gray-blue-25: #fcfcfd;
+$gray-blue-50: #f8f9fc;
+$gray-blue-100: #eaecf5;
+$gray-blue-200: #d5d9eb;
+$gray-blue-300: #b3b8db;
+$gray-blue-400: #717bbc;
+$gray-blue-500: #4e5ba6;
+$gray-blue-600: #3e4784;
+$gray-blue-700: #363f72;
+$gray-blue-800: #293056;
+$gray-blue-900: #101323;
+$gray-blue-950: #0d0f1c;
+
+// Gray Neutral
+$gray-neutral-25: #fcfcfd;
+$gray-neutral-50: #f9fafb;
+$gray-neutral-100: #f3f4f6;
+$gray-neutral-200: #e5e7eb;
+$gray-neutral-300: #d2d6db;
+$gray-neutral-400: #9da4ae;
+$gray-neutral-500: #6c737f;
+$gray-neutral-600: #4d5761;
+$gray-neutral-700: #384250;
+$gray-neutral-800: #1f2a37;
+$gray-neutral-900: #111927;
+$gray-neutral-950: #0d121c;
+
+// Green
+$green-25: #f6fef9;
+$green-50: #edfcf2;
+$green-100: #d3f8df;
+$green-200: #aaf0c4;
+$green-300: #73e2a3;
+$green-400: #3ccb7f;
+$green-500: #16b364;
+$green-600: #099250;
+$green-700: #087443;
+$green-800: #095c37;
+$green-900: #084c2e;
+$green-950: #052e1c;
+
+// Teal
+$teal-25: #f6fefc;
+$teal-50: #f0fdf9;
+$teal-100: #ccfbef;
+$teal-200: #99f6e0;
+$teal-300: #5fe9d0;
+$teal-400: #2ed3b7;
+$teal-500: #15b79e;
+$teal-600: #0e9384;
+$teal-700: #107569;
+$teal-800: #125d56;
+$teal-900: #134e48;
+$teal-950: #0a2926;
+
+// Cyan
+$cyan-25: #f5feff;
+$cyan-50: #ecfdff;
+$cyan-100: #cff9fe;
+$cyan-200: #a5f0fc;
+$cyan-300: #67e3f9;
+$cyan-400: #22ccee;
+$cyan-500: #06aed4;
+$cyan-600: #088ab2;
+$cyan-700: #0e7090;
+$cyan-800: #155b75;
+$cyan-900: #164c63;
+$cyan-950: #0d2d3a;
+
+// Blue
+$blue-25: #062c41;
+$blue-50: #eff8ff;
+$blue-100: #d1e9ff;
+$blue-200: #b2ddff;
+$blue-300: #84caff;
+$blue-400: #53b1fd;
+$blue-500: #2e90fa;
+$blue-600: #1570ef;
+$blue-700: #175cd3;
+$blue-800: #1849a9;
+$blue-900: #194185;
+$blue-950: #102a56;
+
+// Indigo
+$indigo-25: #f5f8ff;
+$indigo-50: #eef4ff;
+$indigo-100: #e0eaff;
+$indigo-200: #c7d7fe;
+$indigo-300: #a4bcfd;
+$indigo-400: #8098f9;
+$indigo-500: #6172f3;
+$indigo-600: #444ce7;
+$indigo-700: #3538cd;
+$indigo-800: #2d31a6;
+$indigo-900: #2d3282;
+$indigo-950: #1f235b;
+
+// Violet
+$violet-25: #fbfaff;
+$violet-50: #f5f3ff;
+$violet-100: #ece9fe;
+$violet-200: #ddd6fe;
+$violet-300: #c3b5fd;
+$violet-400: #a48afb;
+$violet-500: #875bf7;
+$violet-600: #7839ee;
+$violet-700: #6927da;
+$violet-800: #5720b7;
+$violet-900: #491c96;
+$violet-950: #2e125e;
+
+// Purple
+$purple-25: #fafaff;
+$purple-50: #f4f3ff;
+$purple-100: #ebe9fe;
+$purple-200: #d9d6fe;
+$purple-300: #bdb4fe;
+$purple-400: #9b8afb;
+$purple-500: #7a5af8;
+$purple-600: #6938ef;
+$purple-700: #5925dc;
+$purple-800: #4a1fb8;
+$purple-900: #3e1c96;
+$purple-950: #27115f;
+
+// Fuchsia
+$fuchsia-25: #fefaff;
+$fuchsia-50: #fdf4ff;
+$fuchsia-100: #fbe8ff;
+$fuchsia-200: #f6d0fe;
+$fuchsia-300: #eeaafd;
+$fuchsia-400: #e478fa;
+$fuchsia-500: #d444f1;
+$fuchsia-600: #ba24d5;
+$fuchsia-700: #9f1ab1;
+$fuchsia-800: #821890;
+$fuchsia-900: #6f1877;
+$fuchsia-950: #47104c;
+
+// Pink
+$pink-25: #fef6fb;
+$pink-50: #fdf2fa;
+$pink-100: #fce7f6;
+$pink-200: #fcceee;
+$pink-300: #faa7e0;
+$pink-400: #f670c7;
+$pink-500: #ee46bc;
+$pink-600: #dd2590;
+$pink-700: #c11574;
+$pink-800: #9e165f;
+$pink-900: #851651;
+$pink-950: #4e0d30;
+
+// Rosé
+$rose-25: #fff5f6;
+$rose-50: #fff1f3;
+$rose-100: #ffe4e8;
+$rose-200: #fecdd6;
+$rose-300: #fea3b4;
+$rose-400: #fd6f8e;
+$rose-500: #f63d68;
+$rose-600: #e31b54;
+$rose-700: #c01048;
+$rose-800: #a11043;
+$rose-900: #89123e;
+$rose-950: #510b24;
+
+// Orange
+$orange-25: #fefaf5;
+$orange-50: #fef6ee;
+$orange-100: #fdead7;
+$orange-200: #f9dbaf;
+$orange-300: #f7b27a;
+$orange-400: #f38744;
+$orange-500: #ef6820;
+$orange-600: #e04f16;
+$orange-700: #b93815;
+$orange-800: #932f19;
+$orange-900: #772917;
+$orange-950: #511c10;
+
+// Orange dark
+$orange-dark-25: #fff9f5;
+$orange-dark-55: #fff4ed;
+$orange-dark-100: #ffe6d5;
+$orange-dark-200: #ffd6ae;
+$orange-dark-300: #ff9c66;
+$orange-dark-400: #ff692e;
+$orange-dark-500: #ff4405;
+$orange-dark-600: #e62e05;
+$orange-dark-700: #bc1b06;
+$orange-dark-800: #97180c;
+$orange-dark-900: #771a0d;
+$orange-dark-950: #57130a;
+
+// Yellow
+$yellow-25: #fefdf0;
+$yellow-50: #fefbe8;
+$yellow-100: #fef7c3;
+$yellow-200: #feee95;
+$yellow-300: #fde272;
+$yellow-400: #fac515;
+$yellow-500: #eaaa08;
+$yellow-600: #ca8504;
+$yellow-700: #a15c07;
+$yellow-800: #854a0e;
+$yellow-900: #713b12;
+$yellow-950: #542c0d;
+
+/* END SECONDARY COLORS ------------------------------------------- */
+
+// Primary Colors
+$primary-25: $teal-25;
+$primary-50: $teal-50;
+$primary-100: $teal-100;
+$primary-200: $teal-200;
+$primary-300: $teal-300;
+$primary-400: $teal-400;
+$primary-500: $teal-500;
+$primary-600: $teal-600;
+$primary-700: $teal-700;
+$primary-800: $teal-800;
+$primary-900: $teal-900;
+$primary-950: $teal-950;
+
+$primary: $teal-500;
+
+$text-gray: #9098a9;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+// @media(min-width: 1260px)
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  macbook: 1500px,
+  desktop: 1900px,
+  2k: 2000px,
+);
+// @include _assert-ascending($grid-breakpoints, '$grid-breakpoints');
+// @include _assert-starts-at-zero($grid-breakpoints, '$grid-breakpoints');
+
+// Grid containers
+//
+// .container: max-width;
+// Define the maximum width of `.container` for different screen sizes.
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1280px,
+);
+// @include _assert-ascending($container-max-widths, '$container-max-widths');
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+$grid-columns: 12 !default;
+$grid-gutter-width: 2rem !default; // padding-left & padding-right 32px (64 / 2)
+
+// Box Shadows
+//
+$shadow-xs: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+$shadow-sm: 0px 1px 2px 0px rgba(16, 24, 40, 0.06),
+  0px 1px 3px 0px rgba(16, 24, 40, 0.1);
+$shadow-md: 0px 2px 4px -2px rgba(16, 24, 40, 0.06),
+  0px 4px 8px -2px rgba(16, 24, 40, 0.1);
+$shadow-lg: 0px 4px 6px -2px rgba(16, 24, 40, 0.03),
+  0px 12px 16px -4px rgba(16, 24, 40, 0.08);
+$shadow-xl: 0px 20px 24px -4px rgba(16, 24, 40, 0.08),
+  0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+$shadow-2xl: 0px 24px 48px -12px rgba(16, 24, 40, 0.18);
+$shadow-3xl: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
+
+$shadow-focus-primary: 0px 0px 0px 4px rgba($teal-400, 0.5),
+  0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+$shadow-focus-gray: 0px 0px 0px 4px rgba(242, 244, 247, 1),
+  0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+$shadow-focus-red: 0px 0px 0px 4px rgba(254, 228, 226, 1),
+  0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+
+// Badges
+//
+$badge-font-size: 0.875rem;
+$badge-font-weight: $font-weight-medium;
+$badge-padding-y: 0.125rem;
+$badge-padding-x: 0.625rem;
+
+$zindex-levels: (
+  n1: -1,
+  0: 0,
+  1: 1,
+  2: 2,
+  3: 3,
+);
+
+// Background Gradients
+$gradient-primary: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #15b79e 100%);

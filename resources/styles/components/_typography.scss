@@ -1,0 +1,181 @@
+/* START GLOBAL STYLE --------------------------------------------- */
+body {
+  font-family: $font-family-sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.02em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $gray-900;
+}
+
+p {
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+/* END GLOBAL STYLE ----------------------------------------------- */
+
+/* START EYEBROW -------------------------------------------------- */
+.eyebrow {
+  color: $primary-700;
+  font-family: $font-family-headings;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.25rem;
+  margin-bottom: 0.75rem;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+/* END EYEBROW ---------------------------------------------------- */
+
+/* START HEADER TITLE --------------------------------------------- */
+.header-title {
+  color: $gray-900;
+  font-family: $font-family-headings;
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 2.75rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 3rem;
+    line-height: 3.75rem;
+  }
+}
+/* END HEADER TITLE ----------------------------------------------- */
+
+/* START HEADER CONTENT ------------------------------------------- */
+.header-content {
+  color: $gray-600;
+  font-family: $font-family-headings;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.75rem;
+  margin-top: 1rem;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    margin-top: 1.5rem;
+  }
+}
+/* END HEADER CONTENT --------------------------------------------- */
+
+/* START SECTION TITLE -------------------------------------------- */
+h2.section-title {
+  color: $gray-900;
+  font-family: $font-family-headings;
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 2.375rem;
+  margin-bottom: 0;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+
+  + .section-content {
+    margin-top: 1rem;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 1.25rem;
+    }
+  }
+}
+/* END SECTION TITLE ---------------------------------------------- */
+
+/* START SECTION CONTENT ------------------------------------------ */
+.section-content {
+  color: $gray-600;
+  font-family: $font-family-headings;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+  }
+}
+/* END SECTION CONTENT -------------------------------------------- */
+
+/* START TYPOGRAPHY CLASSES --------------------------------------- */
+.display-xs {
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+}
+
+.display-sm {
+  font-size: 1.875rem;
+  line-height: 2.375rem;
+}
+
+.display-md {
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+  letter-spacing: -0.02em;
+}
+
+.display-lg {
+  font-size: 3rem;
+  line-height: 3.75rem;
+  letter-spacing: -0.02em;
+}
+
+.display-xl {
+  font-size: 3.75rem;
+  line-height: 4.5rem;
+  letter-spacing: -0.02em;
+}
+
+.display-2xl {
+  font-size: 4.5rem;
+  line-height: 5.625rem;
+  letter-spacing: -0.02em;
+}
+
+.text-xs {
+  font-size: 0.75rem !important;
+  line-height: 1.125rem !important;
+}
+
+.text-sm {
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+}
+
+.text-md {
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+}
+
+.text-lg {
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important;
+}
+
+.text-xl {
+  font-size: 1.25rem !important;
+  line-height: 1.875rem !important;
+}
+/* END TYPOGRAPHY CLASSES ----------------------------------------- */

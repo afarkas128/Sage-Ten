@@ -1,0 +1,7 @@
+section.section {
+  padding-block: 4rem;
+
+  @include media-breakpoint-up(xl) {
+    padding-block: 6rem;
+  }
+}
