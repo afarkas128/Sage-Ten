@@ -2,8 +2,24 @@
   <nav class="nav-primary navbar navbar-expand-xl">
     <div class="container">
       <a class="brand navbar-brand py-0" href="{{ home_url('/') }}">
-        <img class="img-fluid header-logo" src="@asset('images/logo.svg')" alt="{{ get_bloginfo('name', 'display') }}" width="235" height="31"
-          loading="eager" />
+        {{-- {!! $siteName !!} --}}
+        {{-- <img class="img-fluid header-logo" src="@asset('images/logo.svg')" alt="{{ get_bloginfo('name', 'display') }}" width="235" height="31"
+          loading="eager" /> --}}
+        <svg width="154" height="40" xmlns="http://www.w3.org/2000/svg">
+          <!-- Background -->
+          <rect width="154" height="40" fill="#ffffff" />
+
+          <!-- Narwhal Icon -->
+          <g>
+            <circle cx="20" cy="20" r="20" fill="#15b79e" />
+            <polygon points="20,0 25,15 20,10 15,15" fill="#15b79e" />
+            <ellipse cx="20" cy="20" rx="18" ry="10" fill="#15b79e" />
+            <circle cx="14" cy="17" r="2" fill="#ffffff" />
+          </g>
+
+          <!-- Company Name -->
+          <text x="60" y="28" font-size="24" fill="#15b79e">Narwall</text>
+        </svg>
       </a>
 
       <button class="navbar-toggler" data-toggle="collapse" data-target="#menu-collapse-main" type="button"

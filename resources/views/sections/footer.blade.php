@@ -7,7 +7,6 @@
   $linkedin_url = get_field('linkedin_url', 'option');
   $facebook_url = get_field('facebook_url', 'option');
   $instagram_url = get_field('instagram_url', 'option');
-  $footer_info_text_under_logo = get_field('footer_info_text_under_logo', 'option');
 @endphp
 
 <footer class="footer">
@@ -17,14 +16,24 @@
         <div class="col-12 col-lg-4 col-xl-4 pb-5 pb-lg-0">
           <div class="footer-logo">
             <a href="{{ home_url('/') }}">
-              <img class="img-fluid" src="@asset('images/logo.svg')" alt="{{ get_bloginfo('name', 'display') }}" width="185" height="32"
-                loading="lazy">
+              {{-- <img class="img-fluid" src="@asset('images/logo.svg')" alt="{{ get_bloginfo('name', 'display') }}" width="185" height="32" loading="lazy"> --}}
+              <svg width="154" height="40" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background -->
+                <rect width="154" height="40" fill="#ffffff" />
+
+                <!-- Narwhal Icon -->
+                <g>
+                  <circle cx="20" cy="20" r="20" fill="#15b79e" />
+                  <polygon points="20,0 25,15 20,10 15,15" fill="#15b79e" />
+                  <ellipse cx="20" cy="20" rx="18" ry="10" fill="#15b79e" />
+                  <circle cx="14" cy="17" r="2" fill="#ffffff" />
+                </g>
+
+                <!-- Company Name -->
+                <text x="60" y="28" font-size="24" fill="#15b79e">Narwall</text>
+              </svg>
             </a>
           </div>
-
-          @if ($footer_info_text_under_logo)
-            <div class="footer-description mt-4">{!! $footer_info_text_under_logo !!}</div>
-          @endif
         </div>
 
         <div class="col-12 col-lg-8 col-xl-8">
