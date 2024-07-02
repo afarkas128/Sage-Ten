@@ -1,0 +1,319 @@
+header.main-header {
+  .navbar-toggler {
+    z-index: 1;
+    padding: 0.5rem;
+    max-width: 3.75rem;
+
+    /* START CUSTOM SVG NAVBAR TOGGLER ------------------------------------------ */
+    &:focus {
+      outline-color: $primary-100;
+      outline-offset: 1rem;
+      outline-width: 4px;
+      border-radius: 0.5rem;
+      background-color: $white;
+      box-shadow: 0px 0px 0px 4px $primary-100;
+    }
+
+    &[aria-pressed='true'] {
+      rect {
+        transition: translate 0.2s, rotate 0.2s 0.3s;
+      }
+
+      rect:nth-of-type(1) {
+        translate: 0 333%;
+        rotate: -45deg;
+      }
+
+      rect:nth-of-type(2) {
+        rotate: 45deg;
+      }
+
+      rect:nth-of-type(3) {
+        translate: 0 -333%;
+        rotate: 45deg;
+      }
+
+      svg {
+        rotate: 90deg;
+        transition: rotate 1s 0.4s;
+      }
+    }
+
+    svg:first-of-type {
+      width: 100%;
+    }
+
+    rect {
+      transform-box: fill-box;
+      transform-origin: 50% 50%;
+      fill: $gray-700;
+      transition: rotate 0.2s 0s, translate 0.2s 0.2s;
+    }
+
+    @supports (--custom: linear()) {
+      :root {
+        --elastic-out: linear(
+          0,
+          0.2178 2.1%,
+          1.1144 8.49%,
+          1.2959 10.7%,
+          1.3463 11.81%,
+          1.3705 12.94%,
+          1.3726,
+          1.3643 14.48%,
+          1.3151 16.2%,
+          1.0317 21.81%,
+          0.941 24.01%,
+          0.8912 25.91%,
+          0.8694 27.84%,
+          0.8698 29.21%,
+          0.8824 30.71%,
+          1.0122 38.33%,
+          1.0357,
+          1.046 42.71%,
+          1.0416 45.7%,
+          0.9961 53.26%,
+          0.9839 57.54%,
+          0.9853 60.71%,
+          1.0012 68.14%,
+          1.0056 72.24%,
+          0.9981 86.66%,
+          1
+        );
+        --elastic-in-out: linear(
+          0,
+          0.0009 8.51%,
+          -0.0047 19.22%,
+          0.0016 22.39%,
+          0.023 27.81%,
+          0.0237 30.08%,
+          0.0144 31.81%,
+          -0.0051 33.48%,
+          -0.1116 39.25%,
+          -0.1181 40.59%,
+          -0.1058 41.79%,
+          -0.0455,
+          0.0701 45.34%,
+          0.9702 55.19%,
+          1.0696 56.97%,
+          1.0987 57.88%,
+          1.1146 58.82%,
+          1.1181 59.83%,
+          1.1092 60.95%,
+          1.0057 66.48%,
+          0.986 68.14%,
+          0.9765 69.84%,
+          0.9769 72.16%,
+          0.9984 77.61%,
+          1.0047 80.79%,
+          0.9991 91.48%,
+          1
+        );
+      }
+      [aria-pressed='true'] svg {
+        transition-timing-function: var(--elastic-out);
+      }
+    }
+    /* END CUSTOM SVG NAVBAR TOGGLER -------------------------------------------- */
+  }
+
+  /* START NAV NAVBAR ----------------------------------------------- */
+  nav.navbar {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+
+    @include media-breakpoint-up(xl) {
+      padding-bottom: 1.25rem;
+      padding-top: 1.25rem;
+    }
+
+    /* START BRAND LOGO ----------------------------------------------- */
+    a.navbar-brand {
+      margin: 0;
+      z-index: 101;
+
+      @include media-breakpoint-up(xl) {
+        min-width: 250px; // same as .navigation-actions
+        max-width: 250px;
+        margin-right: 0.75rem;
+      }
+    }
+    /* END BRAND LOGO ------------------------------------------------- */
+  }
+  /* END NAV NAVBAR ------------------------------------------------- */
+
+  /* START MAIN HEADER NAVBAR-NAV ------------------------------------------------- */
+  ul.navbar-nav {
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+
+    @include media-breakpoint-up(xl) {
+      gap: 0.25rem;
+    }
+
+    li.menu-item {
+      &.active {
+        a.nav-link {
+          color: $primary-500 !important;
+        }
+      }
+
+      @include media-breakpoint-down(xl) {
+        width: 100%;
+      }
+
+      &:hover {
+        .dropdown-menu {
+          @include media-breakpoint-up(xl) {
+            display: block;
+          }
+        }
+      }
+    }
+
+    a.nav-link {
+      color: $gray-600;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: $font-weight-semibold;
+      line-height: 1.5rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding-bottom: 0.75rem;
+      padding-top: 0.75rem;
+
+      @include media-breakpoint-up(xl) {
+        padding: 0.5rem;
+      }
+
+      &:has(+ ul.dropdown-menu) {
+        &::after {
+          content: '';
+          display: inline-block;
+          position: relative;
+          right: -0.3125rem;
+          // top: 0.3125rem;
+          top: 0;
+          width: 1.25rem;
+          height: 1.25rem;
+          // background-image: url('/images/icons/icon-chevron-down.svg');
+          background-size: 1.25rem;
+          background-position: center;
+          background-repeat: no-repeat;
+          transition: all 0.2s ease-in;
+        }
+      }
+
+      &:has(+ ul.dropdown-menu.d-block) {
+        &::after {
+          transform: rotate(-180deg);
+        }
+      }
+
+      &:hover {
+        color: $primary-700;
+
+        @include media-breakpoint-up(xl) {
+          &::after {
+            transform: rotate(-180deg);
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-down(xl) {
+      width: 100%;
+      margin: 0;
+      align-items: start;
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+  }
+  /* END MAIN HEADER NAVBAR-NAV --------------------------------------------------- */
+
+  /* START MOBILE MENU ---------------------------------------------- */
+  div#menu-collapse-main {
+    @include media-breakpoint-down(xl) {
+      background-color: $white;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding-top: 1.5rem;
+      position: absolute;
+      right: 0;
+      top: 72px; // // 72px = main-header height
+      height: calc(100dvh - 72px);
+      min-height: calc(100dvh - 72px); // 72px = main-header height
+      max-height: calc(100dvh - 72px);
+      transform-origin: 0% 0%;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+      transform: translate(130vw, 0);
+      z-index: 10;
+
+      > div {
+        transition-delay: 2s;
+        width: 100%;
+      }
+    }
+  }
+  /* END MOBILE MENU ------------------------------------------------ */
+}
+
+/*----------  Custom navbar-toggler  ----------*/
+.navbar-toggler {
+  border: none;
+  background: transparent !important;
+  z-index: 11;
+
+  &:active,
+  &:focus {
+    outline: none;
+    background: transparent !important;
+    box-shadow: none;
+  }
+}
+
+/* START WHEN THE MOBILE MENU IS OPEN --------------------------------------- */
+body.menu-open {
+  overflow: hidden;
+
+  header.main-header {
+    &.sps--blw {
+      div#menu-collapse-main {
+        top: 72px; // 72px = navbar height after fixed to top
+        min-height: calc(100dvh - 72px);
+        max-height: calc(100dvh - 72px);
+      }
+    }
+
+    #menu-collapse-main {
+      overflow: auto;
+      transform: translate(0);
+
+      ul.navbar-nav {
+        max-width: 540px;
+        margin-right: auto;
+        margin-left: auto;
+
+        @include media-breakpoint-up(md) {
+          max-width: 45rem; // 720px
+        }
+
+        @include media-breakpoint-up(lg) {
+          max-width: 60rem; //960px
+        }
+      }
+    }
+
+    li.menu-item {
+      width: 100%;
+    }
+  }
+}
+/* END WHEN THE MOBILE MENU IS OPEN ----------------------------------------- */
