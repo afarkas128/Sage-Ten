@@ -1,7 +1,8 @@
-@import '~bootstrap/scss/bootstrap';
-
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import '~bootstrap/scss/functions';
+
+// 2. Include any default variable overrides here
+@import 'overrides/bs-variable-overrides';
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import '~bootstrap/scss/variables';
@@ -48,9 +49,9 @@
 @import '~bootstrap/scss/spinners';
 @import '~bootstrap/scss/offcanvas';
 @import '~bootstrap/scss/placeholders';
-
-// Include any default variable overrides here
-@import 'overrides/bs-variable-overrides';
+//
+//// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import '~bootstrap/scss/utilities/api';
 
 /** Import theme styles */
 @import 'common/global';
@@ -63,6 +64,3 @@
 @import 'components/utilities';
 
 @import 'sections/sections';
-
-//// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
-@import '~bootstrap/scss/utilities/api';

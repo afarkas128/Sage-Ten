@@ -50,6 +50,11 @@
           ]) !!}
         @endif
       </div>
+
+      <div class="topbar-right d-flex gap-3 align-items-center">
+        <x-button>Primary button</x-button>
+        <x-button type="outline">Outline button</x-button>
+      </div>
     </div>
   </nav>
 </header>

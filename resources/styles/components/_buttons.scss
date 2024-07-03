@@ -10,7 +10,7 @@
   justify-content: center;
   gap: 0.5rem;
   text-align: center;
-  color: $white;
+  // color: $white;
   padding: 0.5rem 1.25rem;
   transition: all 0.3s ease-in-out;
 
@@ -31,7 +31,7 @@
       // $hover-background
       $white,
       // $hover-border
-      $white,
+      $primary-900,
       // $hover-color
       $primary-900,
       // $active-background
@@ -69,6 +69,39 @@
       $gray-500,
       // $active-color
       $white,
+      // $disabled-background
+      $gray-200,
+      // $disabled-border
+      $gray-200,
+      // $disabled-color
+      $gray-100
+    );
+
+    &:focus {
+      box-shadow: $shadow-focus-gray;
+    }
+  }
+
+  &.btn-outline-primary {
+    @include button-variant(
+      //$background
+      transparent,
+      //$border
+      $primary-500,
+      // $color
+      $primary-500,
+      // $hover-background
+      transparent,
+      // $hover-border
+      $primary-900,
+      // $hover-color
+      $primary-900,
+      // $active-background
+      $primary-500,
+      // $active-border
+      $primary-500,
+      // $active-color
+      $primary-500,
       // $disabled-background
       $gray-200,
       // $disabled-border
