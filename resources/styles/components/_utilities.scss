@@ -1,7 +1,3 @@
-hr {
-  opacity: 1;
-}
-
 /* START UTILITIES AND MAP MERGERS ------------------------------------------ */
 $all-colors: map-merge-multiple(
   $blues,
@@ -79,6 +75,348 @@ $utilities: map-merge(
       class: cursor,
       responsive: true,
       values: auto pointer grab,
+    ),
+    'shadow': (
+      property: box-shadow,
+      class: shadow,
+      responsive: true,
+      values: (
+        null: $box-shadow,
+        xs: $box-shadow-xs,
+        sm: $box-shadow-sm,
+        md: $box-shadow-md,
+        lg: $box-shadow-lg,
+        xl: $box-shadow-xl,
+        '2xl': $box-shadow-2xl,
+        '3xl': $box-shadow-3xl,
+        none: none,
+      ),
+    ),
+    'focus-ring': (
+      css-var: true,
+      css-variable-name: focus-ring-color,
+      class: focus-ring,
+      values: map-loop($theme-colors-rgb, rgba-css-var, '$key', 'focus-ring'),
+    ),
+    'margin': (
+      responsive: true,
+      property: margin,
+      class: m,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    'margin-x': (
+      responsive: true,
+      property: margin-right margin-left,
+      class: mx,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    'margin-y': (
+      responsive: true,
+      property: margin-top margin-bottom,
+      class: my,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    'margin-top': (
+      responsive: true,
+      property: margin-top,
+      class: mt,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    'margin-end': (
+      responsive: true,
+      property: margin-right,
+      class: me,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    'margin-bottom': (
+      responsive: true,
+      property: margin-bottom,
+      class: mb,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    'margin-start': (
+      responsive: true,
+      property: margin-left,
+      class: ms,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    // Negative margin utilities
+    'negative-margin':
+      (
+        responsive: true,
+        property: margin,
+        class: m,
+        values: $negative-spacers,
+      ),
+    'negative-margin-x': (
+      responsive: true,
+      property: margin-right margin-left,
+      class: mx,
+      values: $negative-spacers,
+    ),
+    'negative-margin-y': (
+      responsive: true,
+      property: margin-top margin-bottom,
+      class: my,
+      values: $negative-spacers,
+    ),
+    'negative-margin-top': (
+      responsive: true,
+      property: margin-top,
+      class: mt,
+      values: $negative-spacers,
+    ),
+    'negative-margin-end': (
+      responsive: true,
+      property: margin-right,
+      class: me,
+      values: $negative-spacers,
+    ),
+    'negative-margin-bottom': (
+      responsive: true,
+      property: margin-bottom,
+      class: mb,
+      values: $negative-spacers,
+    ),
+    'negative-margin-start': (
+      responsive: true,
+      property: margin-left,
+      class: ms,
+      values: $negative-spacers,
+    ),
+    // Padding utilities
+    'padding':
+      (
+        responsive: true,
+        property: padding,
+        class: p,
+        values: $spacers,
+      ),
+    'padding-x': (
+      responsive: true,
+      property: padding-right padding-left,
+      class: px,
+      values: $spacers,
+    ),
+    'padding-y': (
+      responsive: true,
+      property: padding-top padding-bottom,
+      class: py,
+      values: $spacers,
+    ),
+    'padding-top': (
+      responsive: true,
+      property: padding-top,
+      class: pt,
+      values: $spacers,
+    ),
+    'padding-end': (
+      responsive: true,
+      property: padding-right,
+      class: pe,
+      values: $spacers,
+    ),
+    'padding-bottom': (
+      responsive: true,
+      property: padding-bottom,
+      class: pb,
+      values: $spacers,
+    ),
+    'padding-start': (
+      responsive: true,
+      property: padding-left,
+      class: ps,
+      values: $spacers,
+    ),
+    'gap': (
+      responsive: true,
+      property: gap,
+      class: gap,
+      values: (
+        xs: $spacing-xs,
+        sm: $spacing-sm,
+        md: $spacing-md,
+        lg: $spacing-lg,
+        xl: $spacing-xl,
+        '2xl': $spacing-2xl,
+        '3xl': $spacing-3xl,
+        '5xl': $spacing-5xl,
+        none: none,
+      ),
+    ),
+    'row-gap': (
+      responsive: true,
+      property: row-gap,
+      class: row-gap,
+      values: $spacers,
+    ),
+    'column-gap': (
+      responsive: true,
+      property: column-gap,
+      class: column-gap,
+      values: $spacers,
+    ),
+    'rounded': (
+      responsive: true,
+      property: border-radius,
+      class: rounded,
+      values: (
+        null: $border-radius,
+        0: 0,
+        1: $border-radius-xxs,
+        2: $border-radius-xs,
+        3: $border-radius-sm,
+        4: $border-radius-md,
+        5: $border-radius-lg,
+        6: $border-radius-xl,
+        7: $border-radius-2xl,
+        8: $border-radius-3xl,
+        9: $border-radius-4xl,
+        10: $border-radius-full,
+        circle: 50%,
+        pill: $border-radius-pill,
+      ),
+    ),
+    'rounded-top': (
+      responsive: true,
+      property: border-top-left-radius border-top-right-radius,
+      class: rounded-top,
+      values: (
+        null: $border-radius,
+        0: 0,
+        1: $border-radius-xxs,
+        2: $border-radius-xs,
+        3: $border-radius-sm,
+        4: $border-radius-md,
+        5: $border-radius-lg,
+        6: $border-radius-xl,
+        7: $border-radius-2xl,
+        8: $border-radius-3xl,
+        9: $border-radius-4xl,
+        10: $border-radius-full,
+        circle: 50%,
+        pill: $border-radius-pill,
+      ),
+    ),
+    'rounded-end': (
+      responsive: true,
+      property: border-top-right-radius border-bottom-right-radius,
+      class: rounded-end,
+      values: (
+        null: $border-radius,
+        0: 0,
+        1: $border-radius-xxs,
+        2: $border-radius-xs,
+        3: $border-radius-sm,
+        4: $border-radius-md,
+        5: $border-radius-lg,
+        6: $border-radius-xl,
+        7: $border-radius-2xl,
+        8: $border-radius-3xl,
+        9: $border-radius-4xl,
+        10: $border-radius-full,
+        circle: 50%,
+        pill: $border-radius-pill,
+      ),
+    ),
+    'rounded-bottom': (
+      responsive: true,
+      property: border-bottom-right-radius border-bottom-left-radius,
+      class: rounded-bottom,
+      values: (
+        null: $border-radius,
+        0: 0,
+        1: $border-radius-xxs,
+        2: $border-radius-xs,
+        3: $border-radius-sm,
+        4: $border-radius-md,
+        5: $border-radius-lg,
+        6: $border-radius-xl,
+        7: $border-radius-2xl,
+        8: $border-radius-3xl,
+        9: $border-radius-4xl,
+        10: $border-radius-full,
+        circle: 50%,
+        pill: $border-radius-pill,
+      ),
+    ),
+    'rounded-start': (
+      responsive: true,
+      property: border-bottom-left-radius border-top-left-radius,
+      class: rounded-start,
+      values: (
+        null: $border-radius,
+        0: 0,
+        1: $border-radius-xxs,
+        2: $border-radius-xs,
+        3: $border-radius-sm,
+        4: $border-radius-md,
+        5: $border-radius-lg,
+        6: $border-radius-xl,
+        7: $border-radius-2xl,
+        8: $border-radius-3xl,
+        9: $border-radius-4xl,
+        10: $border-radius-full,
+        circle: 50%,
+        pill: $border-radius-pill,
+      ),
+    ),
+    'overflow': (
+      property: overflow,
+      values: auto hidden visible scroll,
+      responsive: true,
+    ),
+    'overflow-x': (
+      property: overflow-x,
+      values: auto hidden visible scroll,
+      responsive: true,
+    ),
+    'overflow-y': (
+      property: overflow-y,
+      values: auto hidden visible scroll,
+      responsive: true,
     ),
   )
 );

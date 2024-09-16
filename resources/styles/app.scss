@@ -54,8 +54,8 @@
 @import '~bootstrap/scss/utilities/api';
 
 /** Import theme styles */
+@import 'common/custom-classes';
 @import 'common/global';
-
 @import 'components/buttons';
 @import 'components/footer';
 @import 'components/header';

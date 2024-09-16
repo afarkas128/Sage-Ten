@@ -1,501 +1,302 @@
 .btn {
-  border-radius: 3.125rem;
-  font-family: $font-family-sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 0.875rem;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-text-sm;
   line-height: 1.375rem;
   display: inline-flex;
-  align-items: center;
+  padding: 0.5rem 1.125rem;
   justify-content: center;
-  gap: 0.5rem;
-  text-align: center;
-  // color: $white;
-  padding: 0.5rem 1.25rem;
+  align-items: center;
+  gap: $spacing-sm;
   transition: all 0.3s ease-in-out;
-
-  &.btn-lg {
-    font-size: 1.125rem;
-    line-height: 1.625rem;
-    padding: 0.625rem 1.25rem;
-  }
+  box-shadow: $btn-box-shadow;
 
   &.btn-primary {
     @include button-variant(
-      //$background
-      $primary-700,
-      //$border
-      $primary-700,
-      // $color
-      $white,
-      // $hover-background
-      $white,
-      // $hover-border
-      $primary-900,
-      // $hover-color
-      $primary-900,
-      // $active-background
-      $primary-900,
-      // $active-border
-      $primary-900,
-      // $active-color
-      $white,
-      // $disabled-background
-      $primary-100,
-      // $disabled-border
-      $primary-100,
-      // $disabled-color
-      $primary-600
+      $background: $primary-600,
+      $border: $primary-600,
+      $color: $white,
+      $hover-background: $primary-700,
+      $hover-border: $primary-700,
+      $hover-color: $white,
+      $active-background: $primary-600,
+      $active-border: $primary-600,
+      $active-color: $white,
+      $disabled-background: $gray-100,
+      $disabled-border: $gray-100,
+      $disabled-color: $gray-400
     );
-  }
-
-  &.btn-outline-white {
-    @include button-variant(
-      //$background
-      transparent,
-      //$border
-      $white,
-      // $color
-      $white,
-      // $hover-background
-      transparent,
-      // $hover-border
-      $gray-900,
-      // $hover-color
-      $gray-900,
-      // $active-background
-      $gray-500,
-      // $active-border
-      $gray-500,
-      // $active-color
-      $white,
-      // $disabled-background
-      $gray-200,
-      // $disabled-border
-      $gray-200,
-      // $disabled-color
-      $gray-100
-    );
-
-    &:focus {
-      box-shadow: $shadow-focus-gray;
-    }
-  }
-
-  &.btn-outline-primary {
-    @include button-variant(
-      //$background
-      transparent,
-      //$border
-      $primary-500,
-      // $color
-      $primary-500,
-      // $hover-background
-      transparent,
-      // $hover-border
-      $primary-900,
-      // $hover-color
-      $primary-900,
-      // $active-background
-      $primary-500,
-      // $active-border
-      $primary-500,
-      // $active-color
-      $primary-500,
-      // $disabled-background
-      $gray-200,
-      // $disabled-border
-      $gray-200,
-      // $disabled-color
-      $gray-100
-    );
-
-    &:focus {
-      box-shadow: $shadow-focus-gray;
-    }
-  }
-
-  &.btn-white {
-    @include button-variant(
-      //$background
-      $white,
-      //$border
-      $white,
-      // $color
-      $dark,
-      // $hover-background
-      $white,
-      // $hover-border
-      $white,
-      // $hover-color
-      $gray-800,
-      // $active-background
-      $white,
-      // $active-border
-      $gray-100,
-      // $active-color
-      $dark,
-      // $disabled-background
-      $gray-200,
-      // $disabled-border
-      $gray-200,
-      // $disabled-color
-      $gray-100
-    );
-
-    &:focus {
-      box-shadow: $shadow-focus-gray;
-    }
-  }
-
-  &.btn-dark {
-    @include button-variant(
-      //$background
-      $dark,
-      //$border
-      $dark,
-      // $color
-      $white,
-      // $hover-background
-      $gray-800,
-      // $hover-border
-      $gray-800,
-      // $hover-color
-      $white,
-      // $active-background
-      $gray-800,
-      // $active-border
-      $gray-800,
-      // $active-color
-      $white,
-      // $disabled-background
-      $gray-300,
-      // $disabled-border
-      $gray-300,
-      // $disabled-color
-      $white
-    );
-
-    &:focus {
-      box-shadow: $shadow-focus-gray;
+    &:focus,
+    &:active {
+      box-shadow: $ring-brand-shadow-xs;
     }
   }
 
   &.btn-secondary {
     @include button-variant(
-      //$background
-      $white,
-      //$border
-      $primary-300,
-      // $color
-      $primary-500,
-      // $hover-background
-      $primary-50,
-      // $hover-border
-      $primary-300,
-      // $hover-color
-      $primary-800,
-      // $active-background
-      $primary-50,
-      // $active-border
-      $primary-200,
-      // $active-color
-      $primary-700,
-      // $disabled-background
-      $white,
-      // $disabled-border
-      $gray-200,
-      // $disabled-color
-      $gray-400
+      $background: $white,
+      $border: $primary-600,
+      $color: $primary-600,
+      $hover-background: $primary-50,
+      $hover-border: $primary-500,
+      $hover-color: $primary-800,
+      $active-background: $primary-50,
+      $active-border: $primary-600,
+      $active-color: $primary-600,
+      $disabled-background: $white,
+      $disabled-border: $gray-200,
+      $disabled-color: $gray-400
     );
+
+    &:focus,
+    &:active {
+      box-shadow: $ring-brand-shadow-xs;
+    }
   }
 
   &.btn-secondary-gray {
     @include button-variant(
-      //$background
-      $white,
-      //$border
-      $gray-300,
-      // $color
-      $gray-700,
-      // $hover-background
-      $gray-50,
-      // $hover-border
-      $gray-300,
-      // $hover-color
-      $gray-800,
-      // $active-background
-      $white,
-      // $active-border
-      $gray-300,
-      // $active-color
-      $gray-800,
-      // $disabled-background
-      $white,
-      // $disabled-border
-      $gray-200,
-      // $disabled-color
-      $gray-300
+      $background: $white,
+      $border: $gray-300,
+      $color: $gray-700,
+      $hover-background: $gray-100,
+      $hover-border: $gray-300,
+      $hover-color: $gray-800,
+      $active-background: $white,
+      $active-border: $gray-300,
+      $active-color: $gray-700,
+      $disabled-background: $white,
+      $disabled-border: $gray-200,
+      $disabled-color: $gray-300
     );
 
-    &:focus {
-      box-shadow: $shadow-focus-gray;
+    &:focus,
+    &:active {
+      box-shadow: $ring-gray-shadow-xs;
     }
   }
 
   &.btn-tertiary-gray {
     @include button-variant(
-      //$background
-      $white,
-      //$border
-      $gray-600,
-      // $color
-      $gray-600,
-      // $hover-background
-      $gray-50,
-      // $hover-border
-      transparent,
-      // $hover-color
-      $gray-700,
-      // $active-background
-      transparent,
-      // $active-border
-      transparent,
-      // $active-color
-      $gray-600,
-      // $disabled-background
-      transparent,
-      // $disabled-border
-      transparent,
-      // $disabled-color
-      $gray-400
+      $background: transparent,
+      $border: transparent,
+      $color: $gray-600,
+      $hover-background: $gray-100,
+      $hover-border: transparent,
+      $hover-color: $gray-800,
+      $active-background: transparent,
+      $active-border: transparent,
+      $active-color: $gray-600,
+      $disabled-background: transparent,
+      $disabled-border: transparent,
+      $disabled-color: $gray-400
     );
+    box-shadow: none;
+  }
 
-    &:focus {
-      box-shadow: $shadow-focus-gray;
-    }
+  &.btn-tertiary-primary {
+    @include button-variant(
+      $background: transparent,
+      $border: transparent,
+      $color: $primary-700,
+      $hover-background: $primary-50,
+      $hover-border: transparent,
+      $hover-color: $primary-800,
+      $active-background: transparent,
+      $active-border: transparent,
+      $active-color: $primary-700,
+      $disabled-background: transparent,
+      $disabled-border: transparent,
+      $disabled-color: $gray-400
+    );
+    box-shadow: none;
+  }
+
+  &.btn-outline-white {
+    @include button-outline-variant(
+      // $color
+      $white,
+      // $hover-color
+      $gray-900,
+      // $active-background
+      $gray-500,
+      // $active-border
+      $gray-500,
+      // $active-color
+      $white
+    );
+  }
+
+  &.btn-outline-primary {
+    @include button-outline-variant(
+      // $color
+      $primary-500,
+      // $hover-color
+      $primary-900,
+      // $active-background
+      $primary-500,
+      // $active-border
+      $primary-500,
+      // $active-color
+      $primary-500
+    );
+  }
+
+  &.btn-white {
+    @include button-variant(
+      $background: $white,
+      $border: $white,
+      $color: $dark,
+      $hover-background: $white,
+      $hover-border: $white,
+      $hover-color: $gray-800,
+      $active-background: $white,
+      $active-border: $gray-100,
+      $active-color: $dark,
+      $disabled-background: $gray-200,
+      $disabled-border: $gray-200,
+      $disabled-color: $gray-100
+    );
+  }
+
+  &.btn-dark {
+    @include button-variant(
+      $background: $dark,
+      $border: $dark,
+      $color: $white,
+      $hover-background: $gray-800,
+      $hover-border: $gray-800,
+      $hover-color: $white,
+      $active-background: $gray-800,
+      $active-border: $gray-800,
+      $active-color: $white,
+      $disabled-background: $gray-300,
+      $disabled-border: $gray-300,
+      $disabled-color: $white
+    );
   }
 
   &.btn-primary-red {
     @include button-variant(
-      //$background
-      $red-600,
-      //$border
-      $red-600,
-      // $color
-      $white,
-      // $hover-background
-      $red-700,
-      // $hover-border
-      $red-700,
-      // $hover-color
-      $white,
-      // $active-background
-      $red-600,
-      // $active-border
-      $red-600,
-      // $active-color
-      $white,
-      // $disabled-background
-      $red-200,
-      // $disabled-border
-      $red-200,
-      // $disabled-color
-      $white
+      $background: $red-600,
+      $border: $red-600,
+      $color: $white,
+      $hover-background: $red-700,
+      $hover-border: $red-700,
+      $hover-color: $white,
+      $active-background: $red-600,
+      $active-border: $red-600,
+      $active-color: $white,
+      $disabled-background: $red-200,
+      $disabled-border: $red-200,
+      $disabled-color: $white
     );
+  }
 
-    &:focus {
-      box-shadow: $shadow-focus-red;
-    }
+  &.btn-secondary-red {
+    @include button-variant(
+      $background: $white,
+      $border: $red-300,
+      $color: $red-700,
+      $hover-background: $red-50,
+      $hover-border: $red-300,
+      $hover-color: $red-800,
+      $active-background: $white,
+      $active-border: $red-300,
+      $active-color: $red-700,
+      $disabled-background: $white,
+      $disabled-border: $red-200,
+      $disabled-color: $red-300
+    );
+  }
+
+  &.btn-tertiary-red {
+    @include button-variant(
+      $background: $white,
+      $border: transparent,
+      $color: $red-700,
+      $hover-background: $red-50,
+      $hover-border: transparent,
+      $hover-color: $red-800,
+      $active-background: transparent,
+      $active-border: transparent,
+      $active-color: $red-700,
+      $disabled-background: transparent,
+      $disabled-border: transparent,
+      $disabled-color: $red-300
+    );
+  }
+
+  &.btn-link-red {
+    @include button-variant(
+      $background: transparent,
+      $border: transparent,
+      $color: $red-700,
+      $hover-background: transparent,
+      $hover-border: transparent,
+      $hover-color: $red-800,
+      $active-background: transparent,
+      $active-border: transparent,
+      $active-color: $red-700,
+      $disabled-background: transparent,
+      $disabled-border: transparent,
+      $disabled-color: $red-300
+    );
+    box-shadow: none;
+    padding: 0;
+  }
+
+  &.btn-danger {
+    @include button-variant(
+      $background: $red-500,
+      $border: $red-500,
+      $color: $white,
+      $hover-background: $red-600,
+      $hover-border: $red-600,
+      $hover-color: $white,
+      $active-background: $red-500,
+      $active-border: $red-500,
+      $active-color: $white,
+      $disabled-background: $red-200,
+      $disabled-border: $red-200,
+      $disabled-color: $white
+    );
   }
 
   &.btn-link-primary {
     @include button-variant(
-      //$background
-      transparent,
-      //$border
-      transparent,
-      // $color
-      $primary-700,
-      // $hover-background
-      transparent,
-      // $hover-border
-      transparent,
-      // $hover-color
-      $gray-800,
-      // $active-background
-      transparent,
-      // $active-border
-      transparent,
-      // $active-color
-      $gray-700,
-      // $disabled-background
-      transparent,
-      // $disabled-border
-      transparent,
-      // $disabled-color
-      $gray-300
+      $background: transparent,
+      $border: transparent,
+      $color: $primary-700,
+      $hover-background: transparent,
+      $hover-border: transparent,
+      $hover-color: $gray-800,
+      $active-background: transparent,
+      $active-border: transparent,
+      $active-color: $gray-700,
+      $disabled-background: transparent,
+      $disabled-border: transparent,
+      $disabled-color: $gray-300
     );
-
+    box-shadow: none;
     padding: 0;
   }
 
   &.btn-link-gray {
     @include button-variant(
-      //$background
-      transparent,
-      //$border
-      transparent,
-      // $color
-      $gray-600,
-      // $hover-background
-      transparent,
-      // $hover-border
-      transparent,
-      // $hover-color
-      $gray-700,
-      // $active-background
-      transparent,
-      // $active-border
-      transparent,
-      // $active-color
-      $gray-600,
-      // $disabled-background
-      transparent,
-      // $disabled-border
-      transparent,
-      // $disabled-color
-      $gray-300
+      $background: transparent,
+      $border: transparent,
+      $color: $gray-600,
+      $hover-background: transparent,
+      $hover-border: transparent,
+      $hover-color: $gray-700,
+      $active-background: transparent,
+      $active-border: transparent,
+      $active-color: $gray-600,
+      $disabled-background: transparent,
+      $disabled-border: transparent,
+      $disabled-color: $gray-300
     );
-
+    box-shadow: none;
     padding: 0;
-  }
-
-  &.btn-secondary-red {
-    @include button-variant(
-      //$background
-      $white,
-      //$border
-      $red-300,
-      // $color
-      $red-700,
-      // $hover-background
-      $red-50,
-      // $hover-border
-      $red-300,
-      // $hover-color
-      $red-800,
-      // $active-background
-      $white,
-      // $active-border
-      $red-300,
-      // $active-color
-      $red-700,
-      // $disabled-background
-      $white,
-      // $disabled-border
-      $red-200,
-      // $disabled-color
-      $red-300
-    );
-
-    &:focus {
-      box-shadow: $shadow-focus-red;
-    }
-  }
-
-  &.btn-tertiary-red {
-    @include button-variant(
-      //$background
-      $white,
-      //$border
-      transparent,
-      // $color
-      $red-700,
-      // $hover-background
-      $red-50,
-      // $hover-border
-      transparent,
-      // $hover-color
-      $red-800,
-      // $active-background
-      transparent,
-      // $active-border
-      transparent,
-      // $active-color
-      $red-700,
-      // $disabled-background
-      transparent,
-      // $disabled-border
-      transparent,
-      // $disabled-color
-      $red-300
-    );
-
-    &:focus {
-      box-shadow: $shadow-focus-red;
-    }
-  }
-
-  &.btn-link-red {
-    @include button-variant(
-      //$background
-      transparent,
-      //$border
-      transparent,
-      // $color
-      $red-700,
-      // $hover-background
-      transparent,
-      // $hover-border
-      transparent,
-      // $hover-color
-      $red-800,
-      // $active-background
-      transparent,
-      // $active-border
-      transparent,
-      // $active-color
-      $red-700,
-      // $disabled-background
-      transparent,
-      // $disabled-border
-      transparent,
-      // $disabled-color
-      $red-300
-    );
-  }
-
-  &.btn-danger {
-    @include button-variant(
-      //$background
-      $red-500,
-      //$border
-      $red-500,
-      // $color
-      $white,
-      // $hover-background
-      $red-600,
-      // $hover-border
-      $red-600,
-      // $hover-color
-      $white,
-      // $active-background
-      $red-500,
-      // $active-border
-      $red-500,
-      // $active-color
-      $white,
-      // $disabled-background
-      $red-200,
-      // $disabled-border
-      $red-200,
-      // $disabled-color
-      $white
-    );
-
-    &:focus {
-      box-shadow: $shadow-focus-red;
-    }
   }
 }
