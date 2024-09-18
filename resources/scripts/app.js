@@ -12,40 +12,47 @@ domReady(async () => {
 /**
  * @see {@link https://webpack.js.org/api/hot-module-replacement/}
  */
-if (import.meta.webpackHot) import.meta.webpackHot.accept(console.error);
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept((error) => {
+    console.error('HMR Error:', error);
+  });
+}
 
 /**
  * Navbar toggler with overlay menu and attach class menu-open to body
  */
-const TOGGLER = document.querySelector('.navbar-toggler');
+const navbarToggler = document.querySelector('.navbar-toggler');
 
-TOGGLER.addEventListener('click', function (e) {
-  e.preventDefault();
-  TOGGLER.ariaExpanded = !JSON.parse(TOGGLER.ariaExpanded);
+if (navbarToggler) {
+  navbarToggler.addEventListener('click', function (e) {
+    e.preventDefault();
 
-  TOGGLER.setAttribute(
-    'aria-pressed',
-    TOGGLER.matches('[aria-pressed=true]') ? 'false' : 'true',
-  );
+    const isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
+    navbarToggler.setAttribute('aria-expanded', !isExpanded);
+    navbarToggler.setAttribute('aria-pressed', !isExpanded);
 
-  document.body.classList.toggle('menu-open');
+    document.body.classList.toggle('menu-open');
 
-  /**
-   * Get navbar dropdown menus
-   */
-  const navbarDropdownMenus = document.querySelectorAll(
-    '.navbar-nav li.menu-item.dropdown ul.dropdown-menu',
-  );
+    /**
+     * Get navbar dropdown menus
+     */
+    const navbarDropdownMenus = document.querySelectorAll(
+      '.navbar-nav li.menu-item.dropdown ul.dropdown-menu',
+    );
 
-  // Remove the d-block class from the navbar dropdown menu
-  navbarDropdownMenus.forEach((menu) => {
-    if (menu.classList.contains('d-block')) {
-      menu.classList.remove('d-block');
-    }
+    // Remove the d-block class from the navbar dropdown menu
+    navbarDropdownMenus.forEach((menu) => {
+      if (menu.classList.contains('d-block')) {
+        menu.classList.remove('d-block');
+      }
+    });
   });
-});
+} else {
+  console.warn('Navbar toggler not found');
+}
 
 /**
  * Scrollpos styler
  */
-// ScrollPosStyler;
+// Uncomment and initialize when ScrollPosStyler is ready for use.
+// ScrollPosStyler.init();
